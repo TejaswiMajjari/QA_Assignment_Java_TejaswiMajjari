@@ -1,0 +1,204 @@
+Question 1:
+
+1. Create A Selenium WebDriver Instance
+  Webdriver driver=new ChromeDriver();
+
+2. Configure the Browser If Required
+  driver.manage().window().maximize();
+
+3. Navigate to the URL
+
+4. Locate The HTML Element
+
+5. Perform Action On The Located HTML Element
+
+6. Signup in to the website
+
+7. Enter name of the product
+
+8. Verify & Validate The Action
+
+
+package com.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.testng.annotations.Test;
+public class SampleClass {
+                WebDriver driver;
+                public WebDriver setup()
+                {
+                                system.setproperty("webdriver.chrome.driver",
+"D:\\chromeDriver\\chromedriver.exe");
+
+                                WebDriver driver = new ChromeDriver();
+                                driver.get("https://www.shopbridge.com/");
+                                return driver;
+                }
+}
+package com.Test;
+import org.apache.bcel.generic.Select;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+public class Mobiles extends SampleClass {
+                @BeforeTest
+                public  void test1()  throws Exception
+                {
+                                driver = setup();
+                }
+                @Test
+                public void searching() throws Exception{
+Webelement we=driver.findelement(~By.className("gsc-input")~);
+     we.sendkeys("mobile");
+Thread.sleep (2000);
+WebElement we =driver.findelement(~ByclassName("gsc-input")~);
+      we.sendkeys("smartphone");
+Thread.sleep (2000);
+WElement signup=
+driver.findElement(~By.id("submitsignup")~);
+
+                                WebElement we = driver.findElement(By.xpath("//*[@class='tiker_input mini_finder_input_1']"));
+                                Thread.sleep(2000);
+                                we.clear();
+                                Thread.sleep(2000);
+                                we.sendKeys("2000");
+                                WebElement we = driver.findElement(By.xpath("//*[@class='tiker_input mini_finder_input_2']"));
+                                Thread.sleep(2000);
+                                wd.clear();
+                                Thread.sleep(2000);
+                                wd.sendKeys("2000");
+                                driver.findElement(By.xpath("//*[@class='view_description_btn find_mob mini_finder_btn enabled']")).click();
+                                Thread.sleep(2000);
+                                WebElement findElement = driver.findElement(By.xpath("//*[@id='price_box']"));
+                                findElement.click();
+                                Thread.sleep(2000);
+                                findElement.click();
+                                Thread.sleep(2000);
+                                // for low price mobile
+                                String text = driver.findElement(By.xpath("//*[@class='hover_blue_link name gaclick'][contains(text(),'Innelo 1')]")).getText();
+                                System.out.println("Low price mobile Name : "+text);
+                                Thread.sleep(2000);
+                                String price = driver.findElement(By.xpath("//*[@class='price price_padding'][contains(text(),'5,029')]")).getText();
+                                System.out.println("Low price mobile's price : "+price);
+                                // for high price mobile
+                                                driver.findElement(By.xpath("//*[@id='price_box']")).click();
+                                                Thread.sleep(2000);
+                                                String text1 = driver.findElement(By.xpath("//*[@class='hover_blue_link name gaclick'][contains(text(),'Samsung Galaxy J7 Nxt')]")).getText();
+                                                System.out.println("High price mobile Name : "abcd";
+                                                Thread.sleep(2000);
+                                                String price1 = driver.findElement(By.xpath("//*[@class='price price_padding'][contains(text(),'10,000')]")).getText();
+                                                System.out.println("High price mobile's price : "+price1);
+                                                driver.findElement(By.xpath("//*[@class='logo']/a")).click();
+                                                Thread.sleep(2000);
+                }
+@AfterTest
+public void exit() throws Exception
+{
+                driver.quit();
+}
+}
+
+
+
+
+
+
+
+
+
+
+Question 2:
+
+1. Create A Selenium WebDriver Instance
+  Webdriver driver=new ChromeDriver();
+
+2. Configure the Browser If Required
+  driver.manage().window().maximize();
+
+3. Navigate to the URL
+
+4. Locate The HTML Element
+
+5. Perform Action On The Located HTML Element
+
+6. Signup in to the website
+
+7. Enter name of the user
+
+8. Enter the emailid of the user
+
+9. Click on the submit button
+
+10. Click on the terms and conditions checkbox
+
+11. Verify & Validate The Action
+
+
+import org.openqa.selenium.by;
+import
+org.openqa.selenium.javascriptexecutor;
+importorg.openqa.selenium.webDriver;
+import
+org.openqa.selenium.chrome.chromeDriver;
+
+public class Third{
+  
+  public static void main(string[]args)
+ 
+system.setproperty("webdriver.chrome.driver",
+"D:\\chromeDriver\\chromedriver.exe");
+        //instantiate a chromeDriver class.
+        WebDriver driver=newchromeDriver();
+      
+        //Launch website
+        diver.navigate().to("http:www.javapoint.com/");
+         
+         //maximize te browser
+         driver.manage().window().maximize();   
+    Thread.sleep (2000);
+
+
+string[]exp={"English","Dutch"};
+web element dropdown =
+diver.findelement(~By.id("ddlNights~"));
+select select =new select(dropdown);
+
+List<web element>options=
+select.getOptions();
+for(webElement we:options)
+{
+boolean match = false;
+for(inti=0;i<exp.length();i++)
+   if(we.getText().equals(exp[i]){
+    match =true;
+ }
+}
+Assert.assertTrue(match);
+Thread.sleep (2000);
+}
+Webelement E=driver.findelement(~By.className("gsc-input")~);
+     N.sendkeys("tejaswi");
+Thread.sleep (2000);
+WebElement E=driver.findElement(~By.className("gsc-input")~);
+     E.sendkeys("tejaswi.majjari@gmail.com");
+Thread.sleep (2000);
+WebElement CN =driver.findelement(~ByclassName("gsc-input")~);
+      CN.sendkeys("tejaswi");
+Thread.sleep (2000);
+WElement signup=
+driver.findElement(~By.id("submitsignup")~);
+string expectedTermsmessage="To proceed further you must agree to our terms of service and privacy policy";
+        WebElement checkedTermcheckbox=driver.findElement(By.xpath("//p[@class='message mt-2']"));
+        string actualTermsmessage=
+     checkedTermcheckbox.getText();
+Thread.sleep (2000);
+driver.close();
+}
+}
+
